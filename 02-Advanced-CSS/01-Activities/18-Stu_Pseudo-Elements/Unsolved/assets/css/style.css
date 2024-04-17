@@ -60,8 +60,23 @@ article p {
 }
 
 /* TODO: Style the term/phrase - underline, black text, grab cursor */
+.tooltip-css {
+  text-decoration: underline;
+}
 
+.tooltip-css:hover {
+  cursor: grab;
+}
 /* TODO: Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
+
+.tooltip-css:hover::before {
+  color: #13293d;
+  border-radius: none;
+  font-size: 80%;
+  content: "Cascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML";
+  position: relative;
+  bottom: 10px;
+}
 
 aside {
   width: 25%;

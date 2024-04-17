@@ -16,6 +16,8 @@ header {
   text-align: center;
   background: #13293d;
   color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 nav {
@@ -66,9 +68,12 @@ footer {
 .card {
   border-style: solid;
   border-width: 1px;
+  border-radius: 30px;
   padding: 10px;
   margin: 20px;
   flex: 0 0 300px;
+  transform: rotate(7deg);
+  box-shadow: 10px 5px 5px grey;
 }
 
 .card header {
