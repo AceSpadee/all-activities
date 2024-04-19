@@ -85,7 +85,12 @@ button {
   cursor: pointer;
 }
 
-/* What does this CSS rule do and what does moz and webkit represent? */
+/* What does this CSS rule do and what does moz and webkit represent? 
+  this means that this rule will apply only for chrome(webkit) and fire fox(moz). 
+  they do this to get rid of inconsistancies between web browsers
+
+  moz is for firefox and webkit is for chrome
+*/
 select {
   /* -moz-appearance: none;
   -webkit-appearance: none; */
@@ -112,12 +117,21 @@ select:hover, button:hover {
   box-shadow: 0 0 5px #999;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean? 
+  represents an element (such as a form input) that has received focus.
+  It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's
+
+  it focuses the element typically by clicking
+*/
 .text-input:focus {
   border-right-width: 5px;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean? 
+ represents any <input> or <textarea> element that is currently displaying placeholder text.
+
+ changes the box into a dashed box 
+*/
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -136,13 +150,23 @@ select:hover, button:hover {
   margin-right: 2%;
 }
 
-/* What does this selector do? */
+/* What does this selector do? 
+  element that is checked or toggled to an on state
+  checking the checkbox
+    something that could be checked and labeling
+
+  changes the font and color once its checked
+*/
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;
 }
 
-/* What does this selector do? */
+/* What does this selector do? 
+adds the check the the end of the element
+
+adds the text thanks once its checked after the label
+*/
 .checkbox:checked + label::after {
   margin-left: 10px;
   font-size: 90%;

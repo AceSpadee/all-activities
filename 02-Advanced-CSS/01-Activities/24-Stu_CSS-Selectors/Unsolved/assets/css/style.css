@@ -69,6 +69,11 @@ footer {
 }
 
 /* TODO: Add code here to select all <a> elements that link to a file with a `.css` extension */
+div ul a[href$=".css"]::after {
+  content: "📝";
+  margin-left: 1%;
+  text-decoration: none;
+}
 
 @media screen and (max-width: 768px) {
   header {
