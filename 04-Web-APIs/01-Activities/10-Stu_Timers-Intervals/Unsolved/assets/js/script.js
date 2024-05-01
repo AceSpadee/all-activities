@@ -10,10 +10,13 @@ function countdown() {
 
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   const timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timeInterval);
+      displayMessage();
+    }
+  }, 1000);
 }
 
 // Displays the message one word at a time
