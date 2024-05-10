@@ -8,3 +8,27 @@
 
 /* Add your custom class style definitions here */
 /* HINT: Apply CSS variables using `var(--brown)` syntax as your property value */
+  .custom-navbar {
+    background-color: darkgreen;
+}
+
+    :hover.atag {
+      background-color: yellow;
+    }
+
+  .hero {
+    background-color: orange;
+    color: red;
+  }
+
+  .custom-btn {
+    background-color: var(--lightteal);
+  }
+
+  .custom-card {
+    background-color: var(--brown);
+  }
+
+  .custom-card-header {
+    background-color: purple;
+  }

@@ -13,6 +13,7 @@
 
 .custom-navbar {
   background-color: var(--teal);
+  font-family: "Jaro", sans-serif;
 }
 
 .custom-navbar a {
@@ -27,6 +28,7 @@
 .hero {
   background-color: var(--lightteal);
   color: var(--teal);
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .custom-btn {
@@ -42,9 +44,11 @@
 .custom-card {
   border-color: var(--teal);
   color: var(--brown);
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .custom-card-header {
   background-color: var(--teal);
   color: var(--lightteal);
+  font-family: "Jaro", sans-serif;
 }

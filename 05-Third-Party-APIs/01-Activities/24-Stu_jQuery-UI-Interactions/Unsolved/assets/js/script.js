@@ -66,3 +66,5 @@ $(function () {
 
 // Add interaction here
 //
+skillsListEl.sortable();
+

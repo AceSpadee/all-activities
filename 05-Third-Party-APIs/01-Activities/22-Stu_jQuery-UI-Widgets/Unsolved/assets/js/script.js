@@ -31,6 +31,20 @@ formEl.on('submit', handleFormSubmit);
 
 // Add Autocomplete widget here
 //
+$(function () {
+  var list = [
+      "One",
+      "two",
+      "Three",
+      "Four",
+  ];
+  $("#skill-name").autocomplete({
+      source: list
+  });
+  $("#skill-name").autocomplete("enable");
+});
 
 // Add Datepicker widget here
 //
+ $( "#datepicker" ).datepicker();
+  
