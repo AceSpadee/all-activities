@@ -4,7 +4,8 @@ const limitWarningEl = document.querySelector('#limit-warning');
 
 const getRepoName = function () {
   // Where is this value coming from?
-  // TODO: Write your answer here
+  // your getting the url and splitting the query parameters 
+  // it pulls the url after the ?
   const queryString = document.location.search;
   const repoName = queryString.split('=')[1];
 
@@ -14,10 +15,11 @@ const getRepoName = function () {
     getRepoIssues(repoName);
   } else {
     // Under what condition will this run?
-    // TODO: Write your answer here
+    // if the repo name doesnt return value then redirect
     document.location.replace('./index.html');
   }
 };
+
 
 const getRepoIssues = function (repo) {
   const apiUrl = `https://api.github.com/repos/${repo}/issues?direction=asc`;
@@ -28,7 +30,7 @@ const getRepoIssues = function (repo) {
         displayIssues(data);
 
         // What is this checking for? Under what condition will this be `true`?
-        // TODO: Write your answer here
+        // it is checking for if the value of link is excits.  it will be true if the apiURL returns a working value
         if (response.headers.get('Link')) {
           displayWarning(repo);
         }
@@ -41,7 +43,7 @@ const getRepoIssues = function (repo) {
 
 const displayIssues = function (issues) {
   // Is there a difference between this and `!issues.length`?
-  // TODO: Write your answer here
+  // if there are 0 issues then respond. !issues will be a true or false
   if (issues.length === 0) {
     issueContainerEl.textContent = 'This repo has no open issues!';
     return;
@@ -72,7 +74,7 @@ const displayIssues = function (issues) {
 };
 
 // What does this function do?
-// TODO: Write your answer here
+// this function is displaying a link if there are more than 30 issues
 const displayWarning = function (repo) {
   limitWarningEl.textContent = 'To see more than 30 issues, visit ';
 
@@ -82,7 +84,7 @@ const displayWarning = function (repo) {
   linkEl.setAttribute('target', '_blank');
 
   // Where does this appear on the page?
-  // TODO: Write your answer here
+  // this appears at the bottom of the page
   limitWarningEl.appendChild(linkEl);
 };
 

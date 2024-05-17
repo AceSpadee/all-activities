@@ -21,11 +21,12 @@ const formSubmitHandler = function (event) {
 
 const buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // TODO: its targeting the data language attribute on the html page button click
   const language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // TODO: it will sort the repos by the language and display it
+  // it gets the featured repos by language and empties it
   if (language) {
     getFeaturedRepos(language);
 
@@ -55,7 +56,7 @@ const getUserRepos = function (user) {
 
 const getFeaturedRepos = function (language) {
   // What are the query parameters doing here?
-  // TODO: Write your answer here
+  // TODO: searching the query of the language. and sort buy help wanted issues/ it will sort issues with help wanted label
   const apiUrl = `https://api.github.com/search/repositories?q=${language}+is:featured&sort=help-wanted-issues`;
 
   fetch(apiUrl).then(function (response) {
@@ -73,7 +74,7 @@ const displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // TODO: the function wouldnt end and return the value
     return;
   }
 
@@ -81,7 +82,7 @@ const displayRepos = function (repos, searchTerm) {
 
   for (let repoObj of repos) {
     // What is the result of this string concatenation?
-    // TODO: Write your answer here
+    // TODO: its asking for the repo object.owner.login and repo object.name
     const repoName = `${repoObj.owner.login}/${repoObj.name}`;
 
     const repoEl = document.createElement('div');
