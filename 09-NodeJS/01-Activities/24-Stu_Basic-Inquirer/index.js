@@ -1,22 +1,20 @@
-const inquirer = requirer('inquirer');
+const inquirer = require('inquirer');
 const colors = require('colors');
 
 inquirer
   .prompt([
     {
-        type: 'list',
+        type: 'input',
         message: 'What text would you like to log?',
+        name: "text",
+    },
+    {
+        type: 'list',
+        message: "what color would you like",
         name: "color",
-        choices: ['red', 'blue', 'green',]
-    }
+        choices: ["red", "blue", "green", "yellow", "cyan", "magenta"]
+  }
   ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
+  .then((response) => {
+    console.log(colors[response.color](response.text))
   })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
