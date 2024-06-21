@@ -10,10 +10,12 @@ const app = express();
 const sortHelper = (type) =>
   termData.sort(sortData('term', 'relevance', `${type}`));
 
-// TODO: Add a comment describing the functionality of this route
+// TODO:  it means that when a client makes a GET request to /api/terms/. the route will handle the request.
+// route that is for get requests
 
 app.get('/api/terms/', (req, res) => {
-  // TODO: Add a comment describing the req.query object
+  // TODO: checks if there are any query parameters present in the request. If the length of the keys of req.query 
+  // is greater than 0, it means there are query parameters
 
   const hasQuery = Object.keys(req.query).length > 0;
 
@@ -29,10 +31,11 @@ app.get('/api/terms/', (req, res) => {
   return res.json(termData);
 });
 
-// TODO: Add a comment describing what this route will return
+// TODO: return the object from the array that matches the term parameter
+// if term
 
 app.get('/api/term/:term', (req, res) => {
-  // TODO: Add a comment describing the content of req.params in this instance
+  // TODO: is used to retrieve and return the specific term object from the terms array that matches the term parameter provided
 
   const requestedTerm = req.params.term.toLowerCase();
 
@@ -46,7 +49,7 @@ app.get('/api/term/:term', (req, res) => {
   return res.json('No term found');
 });
 
-// TODO: Add a comment describing what this route will return
+// TODO: its used to return all term objects that match category
 
 app.get('/api/terms/:category', (req, res) => {
   const requestedCategory = req.params.category.toLowerCase();
@@ -61,7 +64,7 @@ app.get('/api/terms/:category', (req, res) => {
   return res.json(result);
 });
 
-// TODO: Add a comment describing what this route will return
+// TODO: it will return the value for categories
 
 app.get('/api/categories', (req, res) => {
   const categories = termData.map((term) => term.category);
