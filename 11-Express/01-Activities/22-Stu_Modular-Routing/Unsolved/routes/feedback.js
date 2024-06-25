@@ -9,7 +9,6 @@ fb.get('/', (req, res) => {
   readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// POST Route for submitting feedback
 fb.post('/', (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to submit feedback`);

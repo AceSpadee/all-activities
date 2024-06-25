@@ -48,9 +48,12 @@ app.post('/api/reviews', (req, res) => {
   console.info(`${req.method} request received to add a review`);
 
   // TODO: Add a comment describing the functionality of following line of code:
+  // its destructuring product, review, and username from the req.body. it gets sent to the api/reviews endpoint
+  // 
   const { product, review, username } = req.body;
 
   // TODO: Add a comment describing why we would check to see if the following properties exist before entering the code block
+  // we should check because it helps the data integrety and helps prevent errors
   if (product && review && username) {
     // Variable for the object we will save
     const newReview = {
@@ -69,9 +72,12 @@ app.post('/api/reviews', (req, res) => {
     console.log(response);
 
     // TODO: Add a comment explaining the functionality of res.json()
+    // its giving the response a status of 201 and return the response as json format
+    // sends back successful request with success and json response
     res.status(201).json(response);
   } else {
     // TODO: Add a comment describing the purpose of the else statement in this POST request.
+    //  it catch errors where the required data is missing or invalid and to respond with an appropriate error messag
     res.status(500).json('Error in posting review');
   }
 });
