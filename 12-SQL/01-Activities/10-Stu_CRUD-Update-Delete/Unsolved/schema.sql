@@ -10,4 +10,4 @@ CREATE TABLE fiction (
   id INTEGER NOT NULL,
   -- Creates a string column called "name" which can hold up to 100 characters and cannot contain null --
   name VARCHAR(100) NOT NULL
-);
+); 
